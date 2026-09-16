@@ -1,0 +1,9 @@
+node_modules/
+.artifacts/
+test-results/
+playwright-report/
+*.log
+.env
+.env.*
+__pycache__/
+.DS_Store

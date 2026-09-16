@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "public-production-evidence-v1",
+  "checkedAt": "2026-09-16",
+  "provenance": "Local first-party inspection and existing internal acceptance records; not an independent third-party audit",
+  "currentInventory": {
+    "projects": 13,
+    "nodes": 229,
+    "uniquePngFiles": 687,
+    "pngHeaderDimensions": [3840, 2160],
+    "missingFiles": 0,
+    "editableReviewEntries": 11,
+    "readOnlyReviewEntries": 2,
+    "inspection": "Current manifests, file existence, unique paths, PNG signature and IHDR dimensions; no full image decode or visual re-review in this portfolio inventory"
+  },
+  "priorAcceptance": {
+    "scope": "Magic Johnson and Tim Duncan peak-anchor revision, 2026-09-16",
+    "testedNodesPerProject": 2,
+    "changedAbilityPanels": 19,
+    "outOfScopeModificationRejectionCases": 10,
+    "realSaveRefreshReopenRecovery": true,
+    "injectedWriteFailureRollback": true,
+    "incompleteRightsBlockCommercialExport": true,
+    "allThirteenProjectsRetested": false,
+    "crossRendererByteIdenticalPngGuaranteed": false
+  },
+  "sourceDocuments": [
+    {"document": "项目规则.md", "sha256": "8fb8e28aebbf165e7bd69f294b06ea7cde6a3554e5aaf04d019ee2e044008c96"},
+    {"document": "after_cleanup_verification.json", "sha256": "1cb5c26e7187ef2e167f568b42b8ae5cb86c62f1703314dccfbebee8c0c6bea0"},
+    {"document": "formal_pages_check.json", "sha256": "107fb300a2613b11d71b5a9f89fbfdc0c448d59ce426ff3ad3f7c2277016ce76"},
+    {"document": "最终验收.json", "sha256": "89df139d7d7dfb45b1ec9313c028bb6b452a295db8c517b78c5b2eb3e813a826"},
+    {"document": "构建与越界验证.json", "sha256": "254ed563a9b719cd5b2a16096bdf8c83834b734b040c370bf60e319bd1cf5576"},
+    {"document": "post_qa_exact_restoration.json", "sha256": "b75c582b5e20ef1c891b156f9e566bfcdd0eb166b527d0b5f4761c3a0ce09bab"}
+  ],
+  "disclosure": "Source documents contain internal paths and restricted assets and are retained locally. Hashes bind evidence versions but do not independently establish the claims. No real player photos, fonts, personal resumes, raw research or account data are published.",
+  "metricLimits": "Counts are production files, not videos, users, revenue or measured efficiency improvements. The public demo is a separate simplified implementation."
+}

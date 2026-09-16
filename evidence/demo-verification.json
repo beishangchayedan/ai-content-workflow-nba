@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "demo-browser-verification-v1",
+  "testedAt": "2026-09-16T06:03:02.649Z",
+  "status": "PASS",
+  "browser": "152.0.7977.83",
+  "implementationSha256": "cc8127f814cf10bf37542639616c8a4b4bfb8f98acbaf21ee2d067954978f9df",
+  "checks": [
+    {
+      "name": "default example loads with sixteen editable dimensions",
+      "status": "PASS"
+    },
+    {
+      "name": "editing updates computed score and invalidates human review",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid score and empty title block output",
+      "status": "PASS"
+    },
+    {
+      "name": "missing source and rights block PNG including handler invocation",
+      "status": "PASS"
+    },
+    {
+      "name": "PNG download matches current canvas at 1600x900",
+      "status": "PASS"
+    },
+    {
+      "name": "JSON contains edited state and refresh restores it",
+      "status": "PASS"
+    },
+    {
+      "name": "closing and reopening browser restores saved state",
+      "status": "PASS"
+    },
+    {
+      "name": "import restores data but revokes all confirmations",
+      "status": "PASS"
+    },
+    {
+      "name": "seven malformed imports rejected without changing saved state",
+      "status": "PASS"
+    },
+    {
+      "name": "imported title is treated as text, not HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "no horizontal page overflow at 320,390,768,1440 pixels",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupted browser storage shows recovery notice",
+      "status": "PASS"
+    },
+    {
+      "name": "unavailable browser storage is reported without crashing",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Synthetic demo only",
+    "Not a production transaction or permissions security boundary",
+    "Chrome tested; other browsers not independently tested"
+  ],
+  "testScriptSha256": "6f12b80f6e05ebc2e3590f46f6bd61f921f2155d3805a6e965212966b3c48ef8"
+}

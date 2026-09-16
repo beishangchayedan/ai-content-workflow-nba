@@ -1,0 +1,10 @@
+{
+  "name": "ai-content-workflow-nba",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Evidence-aware AI content production workflow and synthetic-data browser demo",
+  "license": "MIT",
+  "scripts": { "test": "node tests/smoke.cjs" },
+  "devDependencies": { "playwright": "1.62.1" },
+  "engines": { "node": ">=20" }
+}
