@@ -1,10 +1,16 @@
 {
   "schemaVersion": "demo-browser-verification-v1",
-  "testedAt": "2026-09-16T06:08:01.421Z",
+  "testedAt": "2026-09-16T08:37:40.198Z",
   "status": "PASS",
   "browser": "152.0.7977.83",
-  "implementationSha256": "3dafe70455ec6850808b81c282d6316f0bbbca41055a4258d2bd646feb70460e",
+  "implementationFile": "lab.html",
+  "implementationSha256": "c1f6fd34bf9d540e23942b7d947c7b60f128b6c4fb142299964254febfdc4fe5",
+  "entrySha256": "80047a6e67f49467da7d36da3329d592ff1db9b30d3d25877e8ad2def032c435",
   "checks": [
+    {
+      "name": "root entry redirects to the unified portfolio and retains a fallback link",
+      "status": "PASS"
+    },
     {
       "name": "default example loads with sixteen editable dimensions",
       "status": "PASS"
@@ -62,6 +68,5 @@
     "Synthetic demo only",
     "Not a production transaction or permissions security boundary",
     "Chrome tested; other browsers not independently tested"
-  ],
-  "testScriptSha256": "6f12b80f6e05ebc2e3590f46f6bd61f921f2155d3805a6e965212966b3c48ef8"
+  ]
 }

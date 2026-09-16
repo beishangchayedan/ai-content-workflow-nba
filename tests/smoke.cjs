@@ -14,9 +14,9 @@ const key = 'ai-content-workflow-demo-v1';
 const checks = [];
 const errors = [];
 const server = http.createServer((req, res) => {
-  if (req.url === '/' || req.url === '/index.html') {
+  if (req.url === '/' || req.url === '/index.html' || req.url === '/lab.html') {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end(fs.readFileSync(path.join(root, 'index.html')));
+    res.end(fs.readFileSync(path.join(root, req.url === '/lab.html' ? 'lab.html' : 'index.html')));
   } else { res.writeHead(404); res.end(); }
 });
 let context;
@@ -50,8 +50,20 @@ async function completeChecks(page) {
 }
 (async () => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  const url = `http://127.0.0.1:${server.address().port}/`;
+  const origin = `http://127.0.0.1:${server.address().port}`;
+  const url = origin + '/lab.html';
   let page = await start();
+  const destination = 'https://beishangchayedan.github.io/ai-content-workflow/';
+  await page.route(destination, route => route.fulfill({ contentType: 'text/html', body: '<title>Unified destination</title>' }));
+  const entry = await page.request.get(origin + '/');
+  const entryHtml = await entry.text();
+  assert.ok(entryHtml.includes('rel="canonical" href="' + destination + '"'));
+  assert.ok(entryHtml.includes('进入统一作品集'));
+  await page.goto(origin + '/');
+  await page.waitForURL(destination);
+  assert.equal(await page.title(), 'Unified destination');
+  await page.unroute(destination);
+  pass('root entry redirects to the unified portfolio and retains a fallback link');
   await page.goto(url);
   await page.locator('#restore-example').click();
   assert.equal(await page.locator('input[type=number]').count(), 16);
@@ -179,7 +191,9 @@ async function completeChecks(page) {
   const report = {
     schemaVersion: 'demo-browser-verification-v1', testedAt: new Date().toISOString(),
     status: 'PASS', browser: await context.browser().version(),
-    implementationSha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'index.html'))).digest('hex'),
+    implementationFile: 'lab.html',
+    implementationSha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'lab.html'))).digest('hex'),
+    entrySha256: crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'index.html'))).digest('hex'),
     checks, limitations: ['Synthetic demo only', 'Not a production transaction or permissions security boundary', 'Chrome tested; other browsers not independently tested']
   };
   fs.writeFileSync(path.join(artifacts, 'demo-verification.json'), JSON.stringify(report, null, 2) + '\n');
