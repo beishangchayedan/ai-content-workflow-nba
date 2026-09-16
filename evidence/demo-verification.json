@@ -1,9 +1,9 @@
 {
   "schemaVersion": "demo-browser-verification-v1",
-  "testedAt": "2026-09-16T06:03:02.649Z",
+  "testedAt": "2026-09-16T06:08:01.421Z",
   "status": "PASS",
   "browser": "152.0.7977.83",
-  "implementationSha256": "cc8127f814cf10bf37542639616c8a4b4bfb8f98acbaf21ee2d067954978f9df",
+  "implementationSha256": "3dafe70455ec6850808b81c282d6316f0bbbca41055a4258d2bd646feb70460e",
   "checks": [
     {
       "name": "default example loads with sixteen editable dimensions",
